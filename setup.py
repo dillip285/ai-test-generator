@@ -1,21 +1,21 @@
 from setuptools import setup, find_packages
 import os
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-
 def get_version():
     version = os.environ.get('GITHUB_REF_NAME')
     if version:
         return version.lstrip('v')
     return '0.0.0'  # default version
 
+# Read the contents of your README file
+with open('README.md', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name="ai-test-generator",
     version=get_version(),
-    author="Dillip",
-    author_email="dillip285@gmail.com",
+    author=os.environ.get('GITHUB_AUTHOR_NAME', 'Unknown'),
+    author_email=os.environ.get('GITHUB_AUTHOR_EMAIL', 'unknown@example.com'),
     description="AI-powered test case generator for Python projects",
     long_description=long_description,
     long_description_content_type="text/markdown",

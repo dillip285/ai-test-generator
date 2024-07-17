@@ -10,12 +10,23 @@ jobs:
     name: Build and publish to PyPI
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
+
+      - name: Get author info
+        run: |
+          echo "GITHUB_AUTHOR_NAME=$(git log -1 --pretty=format:'%an')" >> $GITHUB_ENV
+          echo "GITHUB_AUTHOR_EMAIL=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_ENV
 
       - name: Install pypa/build
         run: >-
@@ -26,8 +37,9 @@ jobs:
 
       - name: Build a binary wheel and a source tarball
         run: python -m build
+        env:
+          GITHUB_AUTHOR_NAME: ${{ env.GITHUB_AUTHOR_NAME }}
+          GITHUB_AUTHOR_EMAIL: ${{ env.GITHUB_AUTHOR_EMAIL }}
 
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
