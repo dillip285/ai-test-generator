@@ -186,4 +186,12 @@ This tool generates test cases based on AI analysis and may not cover all possib
 Support
 If you encounter any issues or have questions, please file an issue on the GitHub repository.
 
+## Releasing a New Version
+
+To release a new version:
+
+1. Update the CHANGELOG.md with the new version and its changes.
+2. Commit all changes and push to the main branch.
+3. Create and push a new tag with the version number:
+
 Happy testing with AI Test Generator! 🚀🤖
