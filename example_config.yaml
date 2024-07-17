@@ -1,0 +1,18 @@
+default_llm_provider: ollama
+llm_providers:
+  ollama:
+    model: codellama
+  openai:
+    api_key: "your-openai-api-key-here"
+    model: gpt-3.5-turbo
+  groq:
+    api_key: "your-groq-api-key-here"
+    model: mixtral-8x7b-32768
+  claude:
+    api_key: "your-anthropic-api-key-here"
+    model: claude-3-opus-20240229
+output_directory: tests
+agent_llm_mapping:
+  planner: claude
+  code_analyzer: ollama
+  test_writer: groq
