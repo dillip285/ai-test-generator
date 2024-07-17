@@ -7,27 +7,24 @@ def get_version():
         return version.lstrip('v')
     return '0.0.0'  # default version
 
-# Read the contents of your README file
+# Plain text long description
 long_description = """
-# AI Test Generator
+AI Test Generator
 
 AI Test Generator is a powerful CLI tool that leverages artificial intelligence to automatically generate test cases for Python projects. It uses a combination of AI agents and language models to analyze your code, plan test scenarios, and write detailed test cases.
 
-## Features
-
+Features:
 - Supports multiple AI providers (OpenAI, Ollama, Groq, Claude)
 - Generates test cases for individual Python files or entire directories
 - Configurable test frameworks (pytest, unittest)
 - Customizable agent-to-LLM provider mapping
 - Easy-to-use command-line interface
 
-## Installation
-
+Installation:
 You can install AI Test Generator using pip:
 pip install ai-test-generator
 
-## Usage
-
+Usage:
 To generate test cases for a single Python file:
 ai-test-generator generate path/to/your/file.py
 
@@ -44,7 +41,7 @@ setup(
     author_email=os.environ.get('GITHUB_AUTHOR_EMAIL', 'unknown@example.com'),
     description="AI-powered test case generator for Python projects",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/plain",
     url="https://github.com/dillip285/ai-test-generator",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
