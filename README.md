@@ -98,7 +98,7 @@ To use Groq's API, sign up for an API key at https://console.groq.com and add it
 ### Claude
 To use Anthropic's Claude AI, sign up for an API key at https://www.anthropic.com and add it to your configuration file.
 ## Project Structure
-
+```
 ai-test-generator/
 ├── pyproject.toml
 ├── README.md
@@ -133,6 +133,7 @@ ai-test-generator/
 │       ├── test_config.py
 │       └── test_agent_framework.py
 └── example_config.yaml
+```
 
 ## Implementation Details
 ### CLI (cli.py)
