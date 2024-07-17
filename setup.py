@@ -10,6 +10,7 @@ def get_version():
 # Read the contents of your README file
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
+    print(long_description)
 
 setup(
     name="ai-test-generator",
@@ -17,9 +18,9 @@ setup(
     author=os.environ.get('GITHUB_AUTHOR_NAME', 'Unknown'),
     author_email=os.environ.get('GITHUB_AUTHOR_EMAIL', 'unknown@example.com'),
     description="AI-powered test case generator for Python projects",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/ai-test-generator",
+    # long_description=long_description,
+    # long_description_content_type="text/markdown",
+    url="https://github.com/dillip285/ai-test-generator",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[
