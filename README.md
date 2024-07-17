@@ -179,11 +179,11 @@ Please ensure your code adheres to the project's coding standards and includes a
 * Configurable agent-to-LLM mapping
 * Support for pytest and unittest frameworks
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
-Disclaimer
+## Disclaimer
 This tool generates test cases based on AI analysis and may not cover all possible scenarios. It's recommended to review and supplement the generated tests with your own domain knowledge and edge cases.
-Support
+## Support
 If you encounter any issues or have questions, please file an issue on the GitHub repository.
 
 ## Releasing a New Version
